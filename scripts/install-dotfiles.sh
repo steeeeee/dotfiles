@@ -2,23 +2,19 @@ echo -e "
 ${azure}==> In ${white}$PWD ${azure}making symlinks to dotfiles...${reset}"
 
 
-# Manage the lists better
-gitdots=( # gitconfig will copied from local to home
-       'gitignore_global'
-       'gitattributes'
-       );
+# Extrapolating dotfiles lists from directories
 
-shelldots=( 'zpreztorc'
-        'zprofile'
-        'zshenv'
-        'zshrc'
-        'zlogin'
-        'zlogout'
-        'dircolors'
-      );
+# Git dotfiles
+declare -a gitdots
+gitdots+=($(ls -f "$DOTFILES_DIR/git" -I .. -I .))
 
-locals=('gitconfig'
-        );
+# Shell dotfiles
+declare -a shelldots
+shelldots+=($(ls -f "$DOTFILES_DIR/shell" -I .. -I .))
+
+# Files that need to be copied locally dotfiles
+declare -a locals
+locals+=($(ls -f "$DOTFILES_DIR/local" -I .. -I .))
 
 
 cd $HOME
@@ -33,7 +29,7 @@ do
 done
 
 
-# Make symlinks to Zsh/Prezto files
+# Make symlinks to zsh/prezto files
 getZsh=true;
 while $getZsh; do
   echo
