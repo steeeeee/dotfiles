@@ -13,6 +13,7 @@ echo "${blue}» In ${white}$PWD ${blue}making symlinks...${reset}"
 dots=( ### .gitconfig will copied from local to home
        '.gitignore_global'
        '.gitattributes'
+       '.dircolors'
        );
 zshs=('zpreztorc'
       'zprofile'
@@ -20,7 +21,6 @@ zshs=('zpreztorc'
       'zshrc'
       'zlogin'
       'zlogout'
-      'dircolor'
       );
 locals=('.gitconfig'
         );
@@ -98,6 +98,3 @@ do
     cp dotfiles/local/$local .
   fi
 done
-
-
-
