@@ -1,0 +1,5 @@
+git
+iterm2
+zsh
+prezto
+dircolors

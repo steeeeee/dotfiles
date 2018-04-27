@@ -16,9 +16,9 @@ eval $(gdircolors -b $HOME/.dircolors)
 alias ls='ls -l --color --group-directories-first'
 
 # Zsh to use the same colors as ls
-# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz compinit
 compinit
 
-export NODE_PATH="/usr/local/lib/node_modules"
+# export NODE_PATH="/usr/local/lib/node_modules"
