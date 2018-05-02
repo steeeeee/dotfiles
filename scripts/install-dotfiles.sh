@@ -16,6 +16,9 @@ shelldots+=($(ls -f "$DOTFILES_DIR/shell" -I .. -I .))
 declare -a locals
 locals+=($(ls -f "$DOTFILES_DIR/local" -I .. -I .))
 
+# zprezto Theme functions
+declare -a zpreztothemes
+zpreztothemes+=($(ls -f "$DOTFILES_DIR/themes" -I .. -I .))
 
 cd $HOME
 echo -e "
@@ -50,6 +53,26 @@ while $getZsh; do
   esac
 done
 
+# Symlinks zprezto themes
+getThemes=true;
+while $getThemes; do
+  echo
+  read -p "${orange}Do you want to symlink prezto themes? y/n: ${reset}" yn
+  case $yn in
+      [Yy]* )
+          for themes in "${zpreztothemes[@]}"
+          do
+            ln -sfv dotfiles/themes/$theme .zprezto/modules/prompt/functions/$theme
+          done
+          getThemes=false;
+          ;;
+      [Nn]* )
+        echo "Ok, skipping theme symlinking.";
+        getThemes=false;
+        ;;
+      * ) echo "Please answer y or n.";;
+  esac
+done
 
 
 ## Process locals files
