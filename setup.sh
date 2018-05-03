@@ -10,9 +10,6 @@ source ./lib/functions.sh
 caffeinate &
 
 
-
-
-
 # Ask for the administrator password upfront
 step "Get administrator rights upfront"
 sudo -v
@@ -47,14 +44,29 @@ cp --verbose -R $DOTFILES_DIR/fonts/*.ttf $HOME/Library/Fonts
 echo "${dot_color_reset}"
 
 
-# iterm2
+# iterm2 Config
 step "Modifying iterm2 preferences file..."
 
-    # Specify the preferences directory
-    list "Setting preferences directory: ${dot_color_gray_dark}$DOTFILES_DIR/iterm2${dot_color_reset}"
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES_DIR/iterm2"
-    # Tell iTerm2 to use the custom preferences in the directory
-    list "Enabling preferences external file: ${dot_color_gray_dark}true${dot_color_reset}"
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# Specify the preferences directory
+list "Setting preferences directory: ${dot_color_gray_dark}$DOTFILES_DIR/iterm2${dot_color_reset}"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES_DIR/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+list "Enabling preferences external file: ${dot_color_gray_dark}true${dot_color_reset}"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-    success "Done. Please open a new shell session"
+success "Done. Please open a new shell session"
+
+# VSCode Config
+
+# Add Visual Studio Code (code) alias
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# If alias is available
+code -v > /dev/null
+if [[ $? -eq 0 ]];then
+  source "$DOTFILES_DIR/scripts/install-vscode.sh"
+else
+  error "It looks like the command 'code' isn't accessible."
+  error "Please make sure you have Visual Studio Code installed"
+  error "And that you executed this procedure: https://code.visualstudio.com/docs/setup/mac"
+fi

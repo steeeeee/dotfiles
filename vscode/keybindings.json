@@ -1,0 +1,158 @@
+// Inserire i tasti di scelta rapida in questo file per sovrascrivere i valori predefiniti
+[
+    {
+        "key": "cmd+k cmd+f",
+        "command": "editor.action.format",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus"
+    },
+    {   "key": "alt+space",
+        "command": "toggleSuggestionDetails",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+
+    // Emmet Shortcuts
+
+    {
+        "key": "cmd+numpad_add",
+        "command": "editor.emmet.action.incrementNumberByOne",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+numpad_add",
+        "command": "editor.emmet.action.incrementNumberByTen",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+cmd+numpad_add",
+        "command": "editor.emmet.action.incrementNumberByOneTenth",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+numpad_subtract",
+        "command": "editor.emmet.action.decrementNumberByOne",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+numpad_subtract",
+        "command": "editor.emmet.action.decrementNumberByTen",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+cmd+numpad_subtract",
+        "command": "editor.emmet.action.decrementNumberByOneTenth",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+i",
+        "command": "editor.emmet.action.updateImageSize",
+        "when": "editorTextFocus"
+    },
+
+    // Selection
+
+    {
+        "key": "shift+alt+cmd+down",
+        "command": "cursorBottomSelect",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+cmd+up",
+        "command": "cursorTopSelect",
+        "when": "editorTextFocus"
+    },
+
+    // Lines manipulation
+
+    {
+        "key": "cmd+numpad_divide",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+u",
+        "command": "extension.changeCase.camel",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+l",
+        "command": "extension.changeCase.path",
+        "when": "editorTextFocus"
+    },
+    {   "key": "shift+cmd+down",
+        "command": "cursorColumnSelectDown",
+        "when": "editorTextFocus"
+    },
+    {   "key": "shift+cmd+up",
+        "command": "cursorColumnSelectUp",
+        "when": "editorTextFocus"
+    },
+    {   "key": "cmd+k cmd+a",
+        "command": "wwm.aligncode",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "colonize.newline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "extension.wrapTag",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.Down",
+        "key": "cmd+alt+w down",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.DownPrefixInput",
+        "key": "cmd+shift+alt+w cmd+shift+alt+down",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.DownPrefix",
+        "key": "cmd+alt+w cmd+alt+down",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.Inline",
+        "key": "cmd+alt+w w",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.InlinePrefixInput",
+        "key": "cmd+shift+alt+w cmd+shift+alt+w",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.InlinePrefix",
+        "key": "cmd+alt+w cmd+alt+w",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.Up",
+        "key": "cmd+alt+w up",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.UpPrefixInput",
+        "key": "cmd+shift+alt+w cmd+shift+alt+up",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "midnight.console.log.wrap.UpPrefix",
+        "key": "cmd+alt+w cmd+alt+up",
+        "when": "editorTextFocus"
+    }
+]

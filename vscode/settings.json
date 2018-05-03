@@ -1,0 +1,65 @@
+// Inserire le impostazioni in questo file per sovrascrivere quelle predefinite
+{
+    // Font Settings
+    "editor.fontFamily": "Input, Mensch, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 10,
+    "editor.lineHeight": 18,
+    "editor.fontLigatures": true,
+    
+    // Cursor Style
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+
+    // Themes
+    "workbench.colorTheme": "Spirited Away",
+    "workbench.iconTheme": "vscode-great-icons",
+
+    // Behaviour Settings
+    "editor.wordWrap": "on",
+    "editor.smoothScrolling": true,
+
+    // General Settings
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "editor.renderWhitespace": "boundary",
+    "editor.renderIndentGuides": false,
+
+    // GIT
+    "git.enabled": true,
+    "git.autofetch": true,
+
+    // GIT Project Manager
+     "gitProjectManager.baseProjectsFolders": [
+         "~/dev/git-isobar/"
+     ],
+
+    // Formats
+    "html.format.indentInnerHtml": true,
+    "html.format.endWithNewline": true,
+
+    // ESLint
+    "eslint.options": { },
+    "window.zoomLevel": 0,
+
+    "stylelint.enable": true,
+    "css.validate": false,
+
+    // Intellisense
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
+    "editor.tabCompletion": true,
+
+    // Minimap
+    "editor.minimap.enabled": false,
+    "editor.minimap.renderCharacters": false,
+
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "plaintext": "jade"
+    },
+
+    "workbench.panel.defaultLocation": "right",
+
+    "scss.showErrors": true
+}
