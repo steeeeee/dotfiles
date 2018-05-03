@@ -1,37 +1,44 @@
-read -p "
-${orange}Do you want to install command line and GUI apps with Homebrew? y/n ${reset}" -r Install_Apps
-Install_Apps=${Install_Apps:-n}
-if [[ "$Install_Apps" =~ ^(y|Y)$ ]]; 
-    then
-        # Checks if homebrew is already installed
-        echo -e "
-        ${azure}==> Installing brew${reset}"
-        if [[ $(which brew) == "/usr/local/bin/brew" ]]
-            then
-                echo "Brew installed already, skipping"
-            else
-                # Checks if Homebrew can be installed
-                if ! is-macos -o ! is-executable ruby -o ! is-executable curl -o ! is-executable git; 
-                    then
-                        echo "Can't install Homebrew (missing: ruby, curl and/or git)"
-                        return
-                    else
-                        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-                fi
-        fi
 
-        # Launch command line packages script
+# Make symlinks to zsh/prezto files
+installApps=true;
+while $installApps; do
+    prompt "Do you want to install command line and GUI apps with Homebrew? (y/n) "
+    read install
+    case $install in
+        [Yy]* )
+            step "Installing Homebrew..."
+            if [[ $(which brew) == "/usr/local/bin/brew" ]]
+                then
+                    skip "Brew installed already, skipping"
+                else
+                    # Checks if Homebrew can be installed
+                    if ! is-macos -o ! is-executable ruby -o ! is-executable curl -o ! is-executable git; 
+                        then
+                            error "Can't install Homebrew (missing: ruby, curl and/or git)"
+                            return
+                        else
+                            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+                    fi
+            fi
 
-        echo -e "
-        ${azure}==> Installing command line apps${reset}"
-        source "$DOTFILES_DIR/homebrew/install-packages.sh"
+            # Launch command line packages script
 
-        # Launch GUI apps install scripts
-        
-        echo -e "
-        ${azure}==> Installing GUI apps${reset}"
-        source "$DOTFILES_DIR/homebrew/install-casks.sh"
+            step "Installing command line apps with Homebrew..."
+            source "$DOTFILES_DIR/homebrew/install-packages.sh"
 
-    else
-        echo "Ok, skipping Homebrew and packages setup"
-fi
+            # Launch GUI apps install scripts
+            
+            step "Installing GUI apps with Homebrew..."
+            source "$DOTFILES_DIR/homebrew/install-casks.sh"
+            
+            installApps=false;
+            ;;
+
+        [Nn]* )
+            skip "Ok, skipping Homebrew and packages setup";
+            installApps=false;
+            ;;
+
+        * ) echo "Please answer y or n.";;
+  esac
+done
