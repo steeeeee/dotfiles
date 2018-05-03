@@ -20,22 +20,6 @@ azure=$'\e[1m\e[34m'
 # Colors
 # Big TBD
 
-# Setups messages colors
-
-reset=$'\e[0m'
-orange=$'\e[38;5;202m'
-white=$'\e[1;37m'
-blue=$'\e[38;5;26m'
-azure=$'\e[1m\e[34m'
-
-
-step "This is a test"
-info "This is a test"
-success "This is a test"
-error "This is a test"
-warning "This is a test"
-skip "This is a test"
-
 dot_color_none="\033[0m"
 dot_color_reset=$'\e[0m'
 dot_color_dark=$'\e[0;30m'
@@ -103,3 +87,13 @@ function error() {
 function warning() {
   msg "$dot_color_orange[!] $*"
 }
+
+
+
+
+step "This is a test"
+info "This is a test"
+success "This is a test"
+error "This is a test"
+warning "This is a test"
+skip "This is a test"

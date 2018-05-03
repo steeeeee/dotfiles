@@ -21,22 +21,6 @@ sudo -v
 
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Setups messages colors
-
-reset=$'\e[0m'
-orange=$'\e[38;5;202m'
-white=$'\e[1;37m'
-blue=$'\e[38;5;26m'
-azure=$'\e[1m\e[34m'
-
-
-step "This is a test"
-info "This is a test"
-success "This is a test"
-error "This is a test"
-warning "This is a test"
-skip "This is a test"
-
 # Get current dir (so run this script from anywhere)
 
 export DOTFILES_DIR
@@ -59,10 +43,9 @@ if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES
 # Copy Input Font
 step "Copying font files..."
 echo "${dot_color_gray_dark}"
-cp --verbose -R dotfiles/fonts/*.ttf $HOME/Library/Fonts
+cp --verbose -R $DOTFILES_DIR/fonts/*.ttf $HOME/Library/Fonts
 echo "${dot_color_reset}"
 
-success "Done. Please open a new shell session"
 
 # iterm2
 step "Modifying iterm2 preferences file..."
