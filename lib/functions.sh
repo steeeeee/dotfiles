@@ -46,7 +46,7 @@ function backup_and_copy(){
     if ( ! is_dir_exists `dirname "$backup_path"` ); then
       mkdir -p `dirname "$backup_path"`
     fi;
-    cp -v .$1 $backup_path.backup
+    cp -v $HOME/.$1 $backup_path.backup
 
     success "Successfully saved the current .$1 in $DOTFILES_DIR/$2/backup/"
     info "Now to copy a fresh ${dot_color_light_gray}.$1 ${dot_color_azure}template${dot_color_reset}"
