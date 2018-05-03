@@ -23,15 +23,16 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 export DOTFILES_DIR
 
 # Make utilities available
-
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "$DOTFILES_DIR"
-
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Update dotfiles repository itself first
-
-if is-executable git -a -d "$DOTFILES_DIR/.git"; then git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; fi
+if is-executable git -a -d "$DOTFILES_DIR/.git"; then 
+  info "Updating git repository..."
+  git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; 
+else 
+  warning "Install git in order to update the repository"
+fi
 
 . "$DOTFILES_DIR/scripts/install-homebrew.sh"
 . "$DOTFILES_DIR/scripts/install-dotfiles.sh"
@@ -59,11 +60,10 @@ success "Done. Please open a new shell session"
 # VSCode Config
 
 # Add Visual Studio Code (code) alias
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
 # If alias is available
-code -v > /dev/null
-if [[ $? -eq 0 ]];then
+if type "code" > /dev/null; then
   source "$DOTFILES_DIR/scripts/install-vscode.sh"
 else
   error "It looks like the command 'code' isn't accessible."
