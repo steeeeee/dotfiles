@@ -24,12 +24,12 @@ while $installApps; do
             # Launch command line packages script
 
             step "Installing command line apps with Homebrew..."
-            source "$DOTFILES_DIR/homebrew/install-packages.sh"
+            source "$DOTFILES_DIR/scripts/install-homebrew-packages.sh"
 
             # Launch GUI apps install scripts
             
             step "Installing GUI apps with Homebrew..."
-            source "$DOTFILES_DIR/homebrew/install-casks.sh"
+            source "$DOTFILES_DIR/scripts/install-homebrew-casks.sh"
             
             installApps=false;
             ;;
