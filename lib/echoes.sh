@@ -91,9 +91,9 @@ function warning() {
 
 
 
-step "This is a test"
-info "This is a test"
-success "This is a test"
-error "This is a test"
-warning "This is a test"
-skip "This is a test"
+# step "This is a test"
+# info "This is a test"
+# success "This is a test"
+# error "This is a test"
+# warning "This is a test"
+# skip "This is a test"
