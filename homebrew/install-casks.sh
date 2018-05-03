@@ -1,5 +1,5 @@
 if ! is-macos -o ! is-executable brew; then
-  echo "Skipped: Homebrew-Cask"
+  error "Missing dependency: Homebrew"
   return
 fi
 
@@ -10,9 +10,7 @@ echo brew tap caskroom/cask
 echo brew tap caskroom/fonts
 
 # Install packages
-
-echo "
-${blue}» Installing ${white}Homebrew casks...${reset}"
+info "Installing Homebrew casks..."
 
 apps=$(cat "$DOTFILES_DIR/homebrew/casks")
 
@@ -20,7 +18,7 @@ echo brew cask install "${apps[@]}"
 
 # xargs brew cask install < ~/.config/brew/brewcasklist
 
-echo "
-${blue}» Installing ${white}fonts...${reset}"
+
+info "Installing fonts..."
 
 echo brew cask install font-hack-nerd-font

@@ -1,10 +1,12 @@
-echo "${blue}» Updating ${white}Homebrew and installed packages...${reset}"
+
+
+info "Updating Homebrew and installed packages..."
 
 # Update Homebrew and current Packages
 echo brew update
 echo brew upgrade
 
-echo "${blue}» Installing Homebrew ${white}packages...${reset}"
+info "Installing Homebrew CLI packages..."
 
 apps=$(cat "$DOTFILES_DIR/homebrew/packages")
 
