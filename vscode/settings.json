@@ -1,9 +1,10 @@
 // Inserire le impostazioni in questo file per sovrascrivere quelle predefinite
 {
     // Font Settings
-    "editor.fontFamily": "Input, Mensch, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 10,
-    "editor.lineHeight": 18,
+    "editor.fontFamily": "'Operator Mono', Mensch, Input, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "100",
+    "editor.lineHeight": 20,
     "editor.fontLigatures": true,
     
     // Cursor Style
@@ -11,7 +12,7 @@
     "editor.cursorBlinking": "solid",
 
     // Themes
-    "workbench.colorTheme": "Spirited Away",
+    "workbench.colorTheme": "Panda Syntax",
     "workbench.iconTheme": "vscode-great-icons",
 
     // Behaviour Settings
@@ -22,15 +23,13 @@
     "terminal.integrated.shell.osx": "/bin/zsh",
     "editor.renderWhitespace": "boundary",
     "editor.renderIndentGuides": false,
+    // "workbench.colorCustomizations": {
+    //     "editorIndentGuide.activeBackground": "#333"
+    // },
 
     // GIT
     "git.enabled": true,
     "git.autofetch": true,
-
-    // GIT Project Manager
-     "gitProjectManager.baseProjectsFolders": [
-         "~/dev/git-isobar/"
-     ],
 
     // Formats
     "html.format.indentInnerHtml": true,
@@ -39,9 +38,6 @@
     // ESLint
     "eslint.options": { },
     "window.zoomLevel": 0,
-
-    "stylelint.enable": true,
-    "css.validate": false,
 
     // Intellisense
     "html.suggest.angular1": false,
