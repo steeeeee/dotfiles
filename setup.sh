@@ -41,7 +41,7 @@ fi
 # Copy Input Font
 step "Copying font files..."
 echo "${dot_color_gray_dark}"
-cp --verbose -R $DOTFILES_DIR/fonts/*.ttf $HOME/Library/Fonts
+cp -v -R $DOTFILES_DIR/fonts/*.ttf $HOME/Library/Fonts
 echo "${dot_color_reset}"
 
 
