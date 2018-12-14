@@ -107,52 +107,20 @@
     },
     {
         "key": "alt+w",
-        "command": "extension.wrapTag",
-        "when": "editorTextFocus"
+        "command": "editor.emmet.action.wrapWithAbbreviation"
     },
     {
-        "command": "midnight.console.log.wrap.Down",
-        "key": "cmd+alt+w down",
-        "when": "editorTextFocus"
+        "key": "shift+cmd+w",
+        "command": "-workbench.action.closeWindow"
     },
     {
-        "command": "midnight.console.log.wrap.DownPrefixInput",
-        "key": "cmd+shift+alt+w cmd+shift+alt+down",
-        "when": "editorTextFocus"
+        "key": "shift+cmd+w",
+        "command": "workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
     },
     {
-        "command": "midnight.console.log.wrap.DownPrefix",
-        "key": "cmd+alt+w cmd+alt+down",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.Inline",
-        "key": "cmd+alt+w w",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.InlinePrefixInput",
-        "key": "cmd+shift+alt+w cmd+shift+alt+w",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.InlinePrefix",
-        "key": "cmd+alt+w cmd+alt+w",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.Up",
-        "key": "cmd+alt+w up",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.UpPrefixInput",
-        "key": "cmd+shift+alt+w cmd+shift+alt+up",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "midnight.console.log.wrap.UpPrefix",
-        "key": "cmd+alt+w cmd+alt+up",
-        "when": "editorTextFocus"
+        "key": "cmd+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
     }
 ]

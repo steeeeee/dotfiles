@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo -en "Preparing world domination...\n"
 
@@ -35,13 +35,18 @@ else
 fi
 
 . "$DOTFILES_DIR/scripts/install-homebrew.sh"
+
+if hash zsh 2>/dev/null; then
+  zsh "$DOTFILES_DIR/scripts/install_prezto.zsh"
+fi
+
 . "$DOTFILES_DIR/scripts/install-dotfiles.sh"
 
 
 # Copy Input Font
 step "Copying font files..."
 echo "${dot_color_gray_dark}"
-cp -v -R $DOTFILES_DIR/fonts/*.ttf $HOME/Library/Fonts
+cp -v -R $DOTFILES_DIR/fonts/*.ttf $DOTFILES_DIR/fonts/*.otf $HOME/Library/Fonts
 echo "${dot_color_reset}"
 
 

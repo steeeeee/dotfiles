@@ -3,7 +3,7 @@
     // Font Settings
     "editor.fontFamily": "'Operator Mono', Mensch, Input, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
-    "editor.fontWeight": "100",
+    "editor.fontWeight": "300",
     "editor.lineHeight": 20,
     "editor.fontLigatures": true,
     
@@ -42,7 +42,7 @@
     // Intellisense
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
 
     // Minimap
     "editor.minimap.enabled": false,
@@ -57,5 +57,19 @@
 
     "workbench.panel.defaultLocation": "right",
 
-    "scss.showErrors": true
+    // Rest Client
+    "rest-client.fontFamily": "'Operator Mono'",
+    "rest-client.fontSize": 12,
+    "rest-client.fontWeight": "100",
+    "rest-client.enableTelemetry": false,
+    "rest-client.followredirect": false,
+    "rest-client.addRequestBodyLineIndentationAroundBrackets": true,
+    "workbench.editor.showTabs": true,
+    
+    // Scss config
+    "scss.showErrors": true,
+
+
+    "path-intellisense.extensionOnImport": true,
+    "editor.largeFileOptimizations": false
 }

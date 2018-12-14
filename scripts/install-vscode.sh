@@ -20,7 +20,8 @@ while $installExt; do
       code --install-extension cssho.vscode-svgviewer
       code --install-extension wayou.vscode-todo-highlight
       code --install-extension emmanuelbeziat.vscode-great-icons
-
+      code --install-extension humao.rest-client
+      
       success "Extensions for VSC have been installed. Please restart your VSC."
       installExt=false;
       ;;
