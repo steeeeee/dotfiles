@@ -13,7 +13,7 @@
 
     // Themes
     "workbench.colorTheme": "Panda Syntax",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "vscode-icons",
 
     // Behaviour Settings
     "editor.wordWrap": "on",
