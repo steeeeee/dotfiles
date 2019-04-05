@@ -31,8 +31,7 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 
 # Get packages list
-IFS=!
-casks=(`cat "./homebrew/casks"`)
+IFS=$'\n' read -d '' -r -a casks < "$DOTFILES_DIR/homebrew/casks"
 
 # Install packages
 info "Installing Homebrew casks..."
