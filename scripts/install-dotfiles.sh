@@ -1,9 +1,9 @@
 step "Starting dotfiles configuration..."
 
 # Sets up directories to read
-symlinks=( 'git'
-           'shell'
+symlinks=( 'shell'
            'themes'
+           'git'
            'locals' );
 
 for dir in "${symlinks[@]}"

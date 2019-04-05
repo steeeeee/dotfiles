@@ -5,12 +5,17 @@ while $flag; do
   read choice
   case $choice in
     [Yy]* )
-        info "Installing prezto..."
+        info "Installing prezto...";
 
-        setopt EXTENDED_GLOB
-        for rcfile in "${ZDOTDIR:-$HOME}"/dotfiles/prezto/runcoms/^README.md(.N); do
-          [[ $(basename $rcfile) == "zshrc" || $(basename $rcfile) == "zpreztorc" ]] || (echo -n "  linking $rcfile  " && ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}")
-        done
+        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
+        
+        # setopt EXTENDED_GLOB
+        # for rcfile in "${ZDOTDIR:-$HOME}"/dotfiles/prezto/runcoms/^README.md(.N); do
+        #   [[ $(basename $rcfile) == "zshrc" || $(basename $rcfile) == "zpreztorc" ]] || (echo -n "  linking $rcfile  " && ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}")
+        # done
+        info "Base prezto installed, please proceed with shell config file symlinks when asked if you wish to configure it."
+        flag=false;
+        ;;
 
     [Nn]* )
           skip "Ok, skipping prezto.";

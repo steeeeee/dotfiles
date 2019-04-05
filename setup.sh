@@ -37,7 +37,7 @@ fi
 . "$DOTFILES_DIR/scripts/install-homebrew.sh"
 
 if hash zsh 2>/dev/null; then
-  zsh "$DOTFILES_DIR/scripts/install_prezto.zsh"
+  source "$DOTFILES_DIR/scripts/install-prezto.zsh"
 fi
 
 . "$DOTFILES_DIR/scripts/install-dotfiles.sh"
