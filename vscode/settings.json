@@ -5,15 +5,14 @@
     "editor.fontSize": 12,
     "editor.fontWeight": "300",
     "editor.lineHeight": 20,
-    "editor.fontLigatures": true,
     
     // Cursor Style
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "solid",
 
     // Themes
-    "workbench.colorTheme": "Panda Syntax",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
 
     // Behaviour Settings
     "editor.wordWrap": "on",
@@ -71,5 +70,7 @@
 
 
     "path-intellisense.extensionOnImport": true,
-    "editor.largeFileOptimizations": false
+    "editor.largeFileOptimizations": false,
+    "editor.fontLigatures": true,
+    "turboConsoleLog.quote": "'"
 }
