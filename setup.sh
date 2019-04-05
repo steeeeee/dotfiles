@@ -60,6 +60,9 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTFILES_
 list "Enabling preferences external file: ${dot_color_gray_dark}true${dot_color_reset}"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+step "Remove .zcompdump to avoid autocompletion problems..."
+rm -fr ~/.zcompdump*
+
 success "Done. Please open a new shell session"
 
 # VSCode Config
