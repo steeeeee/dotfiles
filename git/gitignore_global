@@ -15,7 +15,7 @@ node_modules/
 #########
 target/
 
-# Eclipse #  
+# Eclipse #
 ###########
 *.classpath
 .settings/
@@ -52,5 +52,5 @@ target/
 ######################
 .DS_Store*
 ehthumbs.db
-Icon?
+Icon[\r]\n
 Thumbs.db
